@@ -1,0 +1,18 @@
+[Unit]
+Description=Service to start KVM domain on failed RDP connection
+#Documentation=
+#After=networking.service
+[Service]
+Type=simple
+User=root
+Group=root
+TimeoutStartSec=0
+Restart=on-failure
+RestartSec=30s
+#ExecStartPre=
+ExecStart=/usr/local/bin/wake-domain.sh
+SyslogIdentifier=Wakedomain
+#ExecStop=
+[Install]
+WantedBy=multi-user.target
+
