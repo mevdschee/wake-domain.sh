@@ -8,4 +8,8 @@ Bash script to start a KVM domain on a failed connection attempt as reported by 
     
 This script will issue a "virsh start win10-vm1" command based on the "error: connect_to win10-vm1 port 3389: failed" message.
 
+In case there is no /var/log/auth.log file then run:
+
+    apt-get install rsyslog
+
 Related blog post: https://tqdev.com/2022-boot-rdp-connected-vm-on-demand
